@@ -2,6 +2,9 @@
 This tool uses the Virus Total and AbuseIPDB APIs to quickly check an IP address and display the results in a clean format. Just add your API keys to the .env file.
 
 ---------
+Usage: python checkip.py [ip-address]
+
+---------
 Example output with 8.8.8.8 (Google DNS)
 
 <img width="639" height="400" alt="image" src="https://github.com/user-attachments/assets/aadf087f-c40a-4fea-866c-e9a7f5769075" />
