@@ -5,15 +5,18 @@
 # os and dotenv for loading in API keys
 # requests for API calls
 # datetime to get current date and time in UTC
+# ipwhois for a whois lookup
 import sys, os, requests
+from ipwhois import IPWhois
 from dotenv import load_dotenv
 from datetime import datetime, timezone
 
 # ANSI color codes
-RED = "\033[31m"
+RED = "\033[91m"
 GREEN = "\033[32m"
-YELLOW = "\033[33m"
+YELLOW = "\033[93m"
 GREY = "\033[90m"
+CYAN = "\033[36m"
 BOLD = "\033[1m"
 ITALIC = "\x1B[3m"
 END = "\033[0m"
@@ -27,6 +30,24 @@ IPDB_API_KEY = os.getenv("IPDB_API_KEY")
 def add_color(text, color):
     # Returns the provided string with added the color codes
     return f"{BOLD}{color}{text}{END}"
+
+# Function for whois lookup
+def whois_lookup(IP):
+    try:
+        # Make IPWhois object
+        obj = IPWhois(IP)
+
+        # Perform a WHOIS lookup
+        lookup = obj.lookup_whois()
+    except Exception as e:
+        print(f"Error: {e}")
+
+    # Print whois info
+    print(f"{BOLD}-~-~- Whois -~-~-{END}")
+    print(f" * Description: {ITALIC}{BOLD}{CYAN}{lookup.get('asn_description')}{END}")
+    print(f" * Country Code: {lookup.get('asn_country_code')}")
+    print(f" * ASN: {lookup.get('asn')}")
+    print(f" * ASN Date: {lookup.get('asn_date')}")
 
 # Function for Virus Total API call and printing the reponse
 def virus_total_lookup(IP):
@@ -148,7 +169,8 @@ def main():
         # Run the API call functions with the IP variable
         virus_total_lookup(IP)
         abuse_ipdb_lookup(IP)
-        print(f"{ITALIC}Generated at: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}{END}\n")
+        whois_lookup(IP)
+        print(f"\n{ITALIC}Generated at: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}{END}\n")
 
 if __name__ == "__main__":
     main()
