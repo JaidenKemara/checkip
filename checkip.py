@@ -37,7 +37,7 @@ def whois_lookup(IP):
         # Make IPWhois object
         obj = IPWhois(IP)
 
-        # Perform a WHOIS lookup
+        # Save whois lookup
         lookup = obj.lookup_whois()
     except Exception as e:
         print(f"Error: {e}")
