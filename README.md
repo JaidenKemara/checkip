@@ -7,9 +7,9 @@ Usage: python checkip.py [ip-address]
 ---------
 Example output with 8.8.8.8 (Google DNS)
 
-<img width="639" height="400" alt="image" src="https://github.com/user-attachments/assets/aadf087f-c40a-4fea-866c-e9a7f5769075" />
+<img width="565" height="532" alt="image" src="https://github.com/user-attachments/assets/9f5833e7-1353-4de9-ba0e-ca09a41a75d3" />
 
 ---------
 Example output with 204.76.203.30 (known malicious IP)
 
-<img width="643" height="385" alt="image" src="https://github.com/user-attachments/assets/d4f37004-11f8-4766-9bf2-ed571427056b" />
+<img width="557" height="542" alt="image" src="https://github.com/user-attachments/assets/efe50de0-4ed9-4e06-9319-e4c0c7b27b21" />
