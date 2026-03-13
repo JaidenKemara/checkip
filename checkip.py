@@ -54,7 +54,7 @@ def virus_total_lookup(IP):
     # Virus Total API url
     url = f"https://www.virustotal.com/api/v3/ip_addresses/{IP}"
 
-    # Headers, pulling Virus Total API key from config.py
+    # Headers, pulling Virus Total API key from .env
     headers = {
         "accept": "application/json",
         "x-apikey": VT_API_KEY
