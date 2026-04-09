@@ -3,7 +3,7 @@ import os, requests # requests for API calls and os for loading keys
 from ipwhois import IPWhois # Used for a whois lookup
 from dotenv import load_dotenv # Used to load API keys from .env file
 from datetime import datetime, timezone # Used to get current date and time in UTC
-from multiprocessing import Pool # Used to quickly check IP addresses from a list (run checks concurrently)
+from multiprocessing import Pool # Used to quickly check IP addresses from a list (check each IP in parallel).
 import argparse # Used for command line arguments
 import re # Used to strip the output of ANSI color codes when saving output to a file
 
