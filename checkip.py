@@ -239,7 +239,7 @@ def main():
         ips = get_ip_list(args.input)
         # Pool from multiprocessing is used to check each IP address concurrently/in parallel.
         # len(ips) is used to set the number of processes equal to the number of IP addresses
-        # in the ips list.
+        # in the ips list. Limit this to a reasonable amount for your machine.
         with Pool(len(ips)) as p:
             results = p.map(check_ip, ips)
 
