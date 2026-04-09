@@ -30,4 +30,4 @@ This tool uses the Virus Total and AbuseIPDB APIs to quickly check an IP address
 
 <img width="725" height="960" alt="screenshotThree" src="https://github.com/user-attachments/assets/52bc04b2-cd33-492e-b808-d130692bc4a6" />
 <br>
-I only have two IPs in the list just so the entire output would be visible. The code creates a new process for each item in the list so limit it to a safe amount for your machine. I will update this with a better way of handling large lists without spawning hundreds of processes.
+I only have two IPs in the list just so the entire output would be visible.
